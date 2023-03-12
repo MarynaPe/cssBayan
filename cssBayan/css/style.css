@@ -97,3 +97,59 @@ input:checked+.accordion__subtitle span {
   color: #000000;
 }
 
+@media (min-width: 320px) {
+
+  body {
+    font-size: 10px;
+  }
+
+  .accordion__title {
+    font-size: 12px;
+  }
+
+  .cross {
+    display: block;
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .accordion__title {
+    font-size: 14px;
+  }
+
+  .cross {
+    display: block;
+  }
+}
+
+@media (min-width: 980px) {
+  body {
+    font-size: 20px;
+  }
+
+  .accordion__title {
+    font-size: 28px;
+  }
+
+  .accordion__list:hover .accordion__label {
+    color: var(--fonts-color-checked);
+  }
+
+  .accordion__label:active .meme {
+    opacity: 0.8;
+  }
+
+  .accordion__label:active span {
+    color: var(--fonts-color);
+  }
+
+  .accordion:hover .accordion__item .cross,
+  .accordion__item:hover .meme {
+    display: block;
+  }
+
+}
