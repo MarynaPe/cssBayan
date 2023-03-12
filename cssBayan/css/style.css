@@ -1,0 +1,155 @@
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('fonts/hanken-grotesk-v5-latin-900.woff2') format('woff2'),
+    url('fonts/hanken-grotesk-v5-latin-900.woff') format('woff');
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+:root {
+  --fonts-color: #1e5cd1;
+  --fonts-color-checked: #000000;
+}
+
+body {
+  font-family: 'Hanken Grotesk', sans-serif;
+  background-color: #f6f6ec;
+  font-weight: 900;
+}
+
+.container {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.accordion {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.accordion__title {
+  font-size: 36px;
+  margin-bottom: 0.6em;
+}
+
+/* .accordion__list {} */
+
+.accordion__item {
+  color: var(--fonts-color);
+}
+
+.accordion__item input {
+  display: none;
+}
+
+.accordion__label {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.accordion__subtitle {
+  display: block;
+  border-top: 4px solid #d3d9e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+}
+
+.cross {
+  display: none;
+  width: 16px;
+  height: 16px;
+  transition: all 0.05s ease-out;
+}
+
+.accordion__item:hover .cross {
+  transform: rotate(45deg);
+}
+
+.cross {
+  opacity: 0;
+}
+
+.accordion__list:hover .cross {
+  opacity: 1;
+}
+
+.meme {
+  display: none;
+  width: 330px;
+  height: 320px;
+  margin: 0.6em auto;
+  border: 0.2em solid #ffd700;
+}
+
+.accordion__item input:checked~.meme {
+  display: block;
+  width: 330px;
+  height: 320px;
+}
+
+input:checked+.accordion__subtitle span {
+  color: #000000;
+}
+
+@media (min-width: 320px) {
+
+  body {
+    font-size: 10px;
+  }
+
+  .accordion__title {
+    font-size: 12px;
+  }
+
+  .cross {
+    display: block;
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .accordion__title {
+    font-size: 14px;
+  }
+
+  .cross {
+    display: block;
+  }
+}
+
+@media (min-width: 980px) {
+  body {
+    font-size: 20px;
+  }
+
+  .accordion__title {
+    font-size: 28px;
+  }
+
+  .accordion__list:hover .accordion__label {
+    color: var(--fonts-color-checked);
+  }
+
+  .accordion__label:active .meme {
+    opacity: 0.8;
+  }
+
+  .accordion__label:active span {
+    color: var(--fonts-color);
+  }
+
+  .accordion:hover .accordion__item .cross,
+  .accordion__item:hover .meme {
+    display: block;
+  }
+
+}
